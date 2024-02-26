@@ -17,8 +17,8 @@ export default function Timer({ isRunning }) {
 
   return (
     <>
-      <p id="game-time-msg">
-        Tiempo de partida:{' '}
+      <p id="game-time-msg" style={{ color: '#eee', fontSize: '1.2em' }}>
+        <span style={{ display: 'block' }}>Tiempo de partida: </span>
         <span id="game-time" className="important-info">
           {formatedTime(elapsedTime)}
         </span>

@@ -1,26 +1,27 @@
-import "./AddPlayer.css";
-import { useState } from "react";
+import './AddPlayer.css';
+import { useState } from 'react';
 
-export default function AddPlayer({ playerPlaceholder, addPlayer }) {
-  let name = playerPlaceholder?.name || `Jugador ${playerPlaceholder.id + 1}`;
-  let ready = playerPlaceholder?.ready || false;
-
-  const [color, setColor] = useState(playerPlaceholder?.color || 0);
+export default function AddPlayer({ placeholder, addPlayer }) {
+  const [name, setName] = useState(
+    placeholder?.name || `Jugador ${placeholder.id + 1}`
+  );
+  const [color, setColor] = useState(placeholder?.color || 0);
+  let ready = placeholder?.ready || false;
 
   const availableColors = [
-    { name: "blue", color: "🟦" },
-    { name: "white", color: "⬜" },
-    { name: "orange", color: "🟧" },
-    { name: "red", color: "🟥" },
+    { name: 'blue', color: '🟦' },
+    { name: 'white', color: '⬜' },
+    { name: 'orange', color: '🟧' },
+    { name: 'red', color: '🟥' },
   ];
 
   function handleSubmit(e) {
     e.preventDefault();
-    addPlayer({ ...playerPlaceholder, name: name, color: color, ready: true });
+    addPlayer({ ...placeholder, name: name, color: color, ready: true });
   }
 
   function cancel() {
-    addPlayer({ ...playerPlaceholder, ready: false });
+    addPlayer({ ...placeholder, ready: false });
   }
 
   return (
@@ -39,7 +40,7 @@ export default function AddPlayer({ playerPlaceholder, addPlayer }) {
               type="text"
               placeholder={name}
               onChange={(e) => {
-                name = e.target.value;
+                setName(e.target.value);
               }}
             />
           </label>

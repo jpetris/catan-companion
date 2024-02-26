@@ -1,6 +1,6 @@
-import AddPlayer from "./AddPlayer";
-import { useEffect, useState, useRef } from "react";
-import "./PreGame.css";
+import AddPlayer from './AddPlayer';
+import { useEffect, useState, useRef } from 'react';
+import './PreGame.css';
 
 export default function PreGame({ preparePlayers, startGame }) {
   const [players, setPlayers] = useState([
@@ -39,13 +39,14 @@ export default function PreGame({ preparePlayers, startGame }) {
       <div className="players-container">
         {players.map((player) => (
           <AddPlayer
-            playerPlaceholder={player}
+            key={player.id}
+            placeholder={player}
             addPlayer={addPlayer}
           ></AddPlayer>
         ))}
       </div>
-      <div>
-        <label>
+      <div style={{ marginTop: '3%' }}>
+        <label style={{ color: 'white' }}>
           Puntos de victoria para ganar: &nbsp;
           <input
             type="number"

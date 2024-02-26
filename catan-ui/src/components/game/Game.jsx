@@ -1,7 +1,7 @@
 import PlayerCard from './PlayerCard';
 import Timer from './Timer';
 import Stats from './Stats';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import './Game.css';
 
 export default function Game({ players, victoryPoints }) {
@@ -11,41 +11,41 @@ export default function Game({ players, victoryPoints }) {
 
   function gameOver(player) {
     setWinner(player);
-    // Stop timer
     setEndTime(Date.now());
   }
 
   return (
     <>
-      {winner === undefined ? (
-        <div>
-          {players.map((p) => {
-            return (
-              <PlayerCard
-                key={p.id}
-                player={p}
-                victoryPoints={victoryPoints}
-                gameOver={gameOver}
-              ></PlayerCard>
-            );
-          })}
-          <p id="victory-points-msg">
-            ¡Jugando a{' '}
-            <span id="victory-points" className="important-info">
-              {victoryPoints}
-            </span>{' '}
-            puntos de victoria!
-          </p>
-          <Timer isRunning={winner === undefined}></Timer>
-        </div>
-      ) : (
-        <Stats start={startTime} end={endTime} winner={winner} />
-      )}
+      <div>
+        {players.map((p) => {
+          return (
+            <PlayerCard
+              key={p.id}
+              player={p}
+              victoryPoints={victoryPoints}
+              gameOver={gameOver}
+            ></PlayerCard>
+          );
+        })}
+        <p style={{ color: '#eee', fontSize: '0.9em' }}>
+          (Jugando a{' '}
+          <span id="victory-points" className="important-info">
+            {victoryPoints}
+          </span>{' '}
+          puntos de victoria)
+        </p>
+        {winner !== undefined ? (
+          <Stats
+            start={startTime}
+            end={endTime}
+            players={players}
+            winner={winner}
+          />
+        ) : (
+          ''
+        )}
+        <Timer isRunning={winner === undefined}></Timer>
+      </div>
     </>
   );
 }
-
-/*
-❌ - Tiempo de partida
-✔️ - Puntos de Victoria
-*/
