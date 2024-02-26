@@ -1,16 +1,16 @@
-import { useState, useEffect, useRef } from "react";
-import "./PlayerCard.css";
+import { useState, useEffect, useRef } from 'react';
+import './PlayerCard.css';
 
-export default function PlayerCard({ player, victoryPoints }) {
+export default function PlayerCard({ player, victoryPoints, gameOver }) {
   const [winner, setWinner] = useState(false);
   const [score, setScore] = useState(2);
 
   useEffect(() => {
-    score == victoryPoints && setWinner(true);
+    score == victoryPoints && gameOver(player);
   }, [score]);
 
   return (
-    <div className="main-container">
+    <div className="player-card-container">
       <p id="player-name" className="fira-sans-regular">
         {player.name}
       </p>
