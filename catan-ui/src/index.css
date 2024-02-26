@@ -1,4 +1,30 @@
 :root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  place-items: center;
+  min-width: 600px;
+  min-height: 100vh;
+}
+
+html {
+  padding: 5% 0% 5% 0%;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+  height: 100%;
+  padding: 0;
+  background: linear-gradient(to bottom, #c74230, #e27a5b);
+}
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -66,3 +92,4 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+ */

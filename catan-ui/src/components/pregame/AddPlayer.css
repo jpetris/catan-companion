@@ -1,0 +1,39 @@
+.player-container {
+  display: inline-block;
+  padding: 1%;
+  border: 2px solid #733625;
+  border-radius: 5%;
+  height: 100%;
+  width: 15%;
+  padding: 4%;
+  margin: 4px;
+  background: linear-gradient(to bottom, #efd78f, #efc466);
+}
+
+#player-name-input {
+  display: block;
+  width: 100%;
+  padding: 15px 0px 15px 0px;
+  margin: 0;
+  text-align: center;
+  border-radius: 5%;
+  border: 1px solid gray;
+  font-size: 1.1em;
+}
+
+.color-picker {
+  display: inline-block;
+  text-align: center;
+  height: 40px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.color-picker-label {
+  padding: 1%;
+  font-size: 32px;
+}
+
+button {
+  text-align: center;
+}

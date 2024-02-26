@@ -1,0 +1,15 @@
+#open-slot-btn {
+  font-size: 2em;
+  font-weight: bold;
+  border-radius: 50%;
+  display: inline-flex;
+  height: fit-content;
+}
+
+.players-container {
+  border: 1px solid lightgray;
+}
+
+#start-game-btn {
+  margin: 2%;
+}
