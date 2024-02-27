@@ -40,15 +40,19 @@ export default function PreGame({ preparePlayers, startGame }) {
         ))}
       </div>
       <div style={{ marginTop: '3%' }}>
-        <label style={{ color: 'white' }}>
-          Puntos de victoria para ganar: &nbsp;
-          <input
-            id="vp-input"
-            type="number"
-            defaultValue={victoryPoints}
-            onChange={(e) => setVictoryPoints(e.target.value)}
-          />
+        <label htmlFor="vp-input" style={{ display: 'block', color: 'white' }}>
+          Puntos de victoria para ganar:
         </label>
+        <p style={{ fontSize: '2em', fontWeight: 'bold', color: 'white' }}>
+          {victoryPoints}
+        </p>
+        <input
+          id="vp-input"
+          type="range"
+          defaultValue={victoryPoints}
+          onChange={(e) => setVictoryPoints(e.target.value)}
+          style={{ width: '50%' }}
+        />
       </div>
       <button
         id="start-game-btn"
