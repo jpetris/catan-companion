@@ -10,5 +10,12 @@
 }
 
 #start-game-btn {
-  margin: 2%;
+  margin: 3%;
+  height: 50px;
+  font-size: 1.1em;
+}
+
+#vp-input {
+  font-size: 1.2em;
+  width: 50px;
 }
