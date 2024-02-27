@@ -43,6 +43,7 @@ export default function PreGame({ preparePlayers, startGame }) {
         <label style={{ color: 'white' }}>
           Puntos de victoria para ganar: &nbsp;
           <input
+            id="vp-input"
             type="number"
             defaultValue={victoryPoints}
             onChange={(e) => setVictoryPoints(e.target.value)}

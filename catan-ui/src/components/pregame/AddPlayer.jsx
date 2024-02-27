@@ -29,7 +29,10 @@ export default function AddPlayer({ placeholder, addPlayer }) {
       {ready ? (
         <div className="player-ready-container">
           <p>¡Listo!</p>
-          <p>{name}</p>
+          <p>
+            {name}
+            {availableColors[color].color}
+          </p>
           <button onClick={cancel}>Volver</button>
         </div>
       ) : (
@@ -46,25 +49,19 @@ export default function AddPlayer({ placeholder, addPlayer }) {
           </label>
           <br />
           <div className="color-picker">
-            <button
-              onClick={() => {
-                setColor(color == 0 ? 3 : color - 1);
-              }}
-            >
-              &larr;
-            </button>
-            <span className="color-picker-label">
-              {availableColors[color].color}
-            </span>
-            <button
+            <span
+              className="color-picker-label"
+              style={{ fontSize: '5em', margin: '0', padding: '0' }}
               onClick={() => {
                 setColor(color == 3 ? 0 : color + 1);
               }}
             >
-              &rarr;
-            </button>
+              {availableColors[color].color}
+            </span>
           </div>
-          <button onClick={handleSubmit}>Agregar</button>
+          <button onClick={handleSubmit} style={{ marginTop: '30px' }}>
+            Agregar
+          </button>
         </div>
       )}
     </div>
