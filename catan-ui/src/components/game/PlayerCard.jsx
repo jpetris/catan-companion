@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import './PlayerCard.css';
 
 export default function PlayerCard({ player, victoryPoints, gameOver }) {
@@ -8,7 +8,7 @@ export default function PlayerCard({ player, victoryPoints, gameOver }) {
 
   useEffect(() => {
     score == victoryPoints && gameOver(player);
-  }, [score]);
+  });
 
   return (
     <div
@@ -29,7 +29,7 @@ export default function PlayerCard({ player, victoryPoints, gameOver }) {
           borderBottom: '2px solid gray',
         }}
       >
-        {score === victoryPoints ? (
+        {score == victoryPoints ? (
           <p style={{ fontSize: '2.5em', padding: '0', margin: '0' }}>👑</p>
         ) : (
           ''
@@ -46,14 +46,16 @@ export default function PlayerCard({ player, victoryPoints, gameOver }) {
           <button
             className="score-btn"
             onClick={() => {
-              if (score > 2) setScore(score - 1);
+              if (score > 2) setScore((prev) => prev - 1);
             }}
           >
             -
           </button>
           <button
             className="score-btn"
-            onClick={() => score < victoryPoints && setScore(score + 1)}
+            onClick={() =>
+              score < victoryPoints && setScore((prev) => prev + 1)
+            }
           >
             +
           </button>

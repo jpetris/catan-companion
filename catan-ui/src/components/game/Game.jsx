@@ -16,6 +16,7 @@ export default function Game({ players, victoryPoints }) {
 
   return (
     <>
+      {console.log(`victorypoints: ${victoryPoints}`)}
       <div>
         {players.map((p) => {
           return (

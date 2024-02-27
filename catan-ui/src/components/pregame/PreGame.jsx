@@ -1,5 +1,5 @@
 import AddPlayer from './AddPlayer';
-import { useEffect, useState, useRef } from 'react';
+import { useState } from 'react';
 import './PreGame.css';
 
 export default function PreGame({ preparePlayers, startGame }) {
@@ -17,12 +17,6 @@ export default function PreGame({ preparePlayers, startGame }) {
       const copy = [...currentPlayers];
       copy[newPlayer.id] = newPlayer;
       return copy;
-    });
-  };
-
-  const instantiatePlayer = () => {
-    setPlayers((currentPlayers) => {
-      return [...currentPlayers, { id: currentPlayers.length }];
     });
   };
 

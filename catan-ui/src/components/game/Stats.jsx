@@ -1,4 +1,3 @@
-import formatedTime from '../../utils/TimeFormatter.js';
 import './Stats.css';
 
 export default function Stats({ start, end, players, winner }) {
@@ -21,9 +20,6 @@ export default function Stats({ start, end, players, winner }) {
           const time = new Date(start.current);
           return `${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`;
         }}
-      </p> */}
-      {/* <p style={{ color: 'white' }}>
-        Tiempo de partida: {formatedTime((end - start.current) / 1000)}
       </p> */}
     </>
   );
