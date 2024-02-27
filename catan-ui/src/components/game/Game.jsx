@@ -28,12 +28,12 @@ export default function Game({ players, victoryPoints }) {
             ></PlayerCard>
           );
         })}
-        <p style={{ color: '#eee', fontSize: '0.9em' }}>
-          (Jugando a{' '}
+        <p style={{ color: '#eee', fontSize: '1.4em' }}>
+          Objetivo:&nbsp;
           <span id="victory-points" className="important-info">
             {victoryPoints}
-          </span>{' '}
-          puntos de victoria)
+          </span>
+          &nbsp;PV
         </p>
         {winner !== undefined ? (
           <Stats

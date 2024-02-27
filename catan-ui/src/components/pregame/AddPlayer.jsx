@@ -9,10 +9,10 @@ export default function AddPlayer({ placeholder, addPlayer }) {
   let ready = placeholder?.ready || false;
 
   const availableColors = [
-    { name: 'blue', color: '🟦' },
-    { name: 'white', color: '⬜' },
-    { name: 'orange', color: '🟧' },
-    { name: 'red', color: '🟥' },
+    { name: 'blue', color: '🟦', hex: '#00a6ed' },
+    { name: 'white', color: '⬜', hex: '#f0f0f0' },
+    { name: 'orange', color: '🟧', hex: '#fc9338' },
+    { name: 'red', color: '🟥', hex: '#f8312f' },
   ];
 
   function handleSubmit(e) {
@@ -25,14 +25,17 @@ export default function AddPlayer({ placeholder, addPlayer }) {
   }
 
   return (
-    <div className="player-container">
+    <div
+      className="player-container"
+      style={{
+        outline: `4px solid ${availableColors[color].hex}`,
+        outlineOffset: '-10px',
+      }}
+    >
       {ready ? (
         <div className="player-ready-container">
           <p>¡Listo!</p>
-          <p>
-            {name}
-            {availableColors[color].color}
-          </p>
+          <p>{name}</p>
           <button onClick={cancel}>Volver</button>
         </div>
       ) : (
@@ -59,7 +62,15 @@ export default function AddPlayer({ placeholder, addPlayer }) {
               {availableColors[color].color}
             </span>
           </div>
-          <button onClick={handleSubmit} style={{ marginTop: '30px' }}>
+          <button
+            onClick={handleSubmit}
+            style={{
+              marginTop: '30px',
+              height: '40px',
+              border: '2px solid lightgray',
+              borderRadius: '10px',
+            }}
+          >
             Agregar
           </button>
         </div>

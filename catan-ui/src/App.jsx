@@ -1,7 +1,7 @@
-import { useState } from "react";
-import "./App.css";
-import PreGame from "./components/pregame/PreGame";
-import Game from "./components/game/Game";
+import { useState } from 'react';
+import './App.css';
+import PreGame from './components/pregame/PreGame';
+import Game from './components/game/Game';
 
 function App() {
   const [ready, setReady] = useState(false);
@@ -16,7 +16,15 @@ function App() {
 
   return (
     <>
-      <h1 className="medievalsharp-regular">Catan Companion</h1>
+      <h1
+        className="medievalsharp-regular"
+        style={{
+          fontSize: '4em',
+          marginBottom: '2%',
+        }}
+      >
+        Catan Companion
+      </h1>
       {ready ? (
         <Game players={players} victoryPoints={victoryPoints}></Game>
       ) : (
